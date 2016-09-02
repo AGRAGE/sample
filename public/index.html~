@@ -11,8 +11,8 @@
 <body>
 	<h3>Привет, залогинься!</h3>
 	<form action="/users" method="post" onsubmit="onSubmit(this); return false;">
-		<input placeholder="Ваш email" name="user" value=""/>
-		<input placeholder="Ваше имя"  name="email" value=""/>
+		<input placeholder="Ваш email" type="email" name="name" value=""/>
+		<input placeholder="Ваше имя" type="text" name="email" value=""/>
 		<button name="name">
 		Привет!
 		</button>
