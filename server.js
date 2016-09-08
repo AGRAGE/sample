@@ -1,16 +1,16 @@
-let express = require('express');
-let technologger = require('technologger');
-let parser = require('body-parser');
+let express = require("express");
+let technologger = require("technologger");
+let parser = require("body-parser");
 let app = express();
 
 if (emailArr === undefined) var emailArr = {};
 
-app.use('/', express.static('public'));
+app.use("/", express.static("public"));
 
 app.use(parser.json());
 app.use(technologger);
 
-app.post('/users', (req, res, body) => {
+app.post("/users", (req, res, body) => {
     console.log(req.body);
 
     // TODO: вернуть количество обращений

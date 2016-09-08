@@ -1,16 +1,16 @@
-'use strict'
+"use strict"
 
 
 function onSubmit (form) {
 	let data = {
-		user: form.elements['user'].value,
-		email: form.elements['email'].value
+		user: form.elements["user"].value,
+		email: form.elements["email"].value
 	};
-	let result = request('/users',  data);	
+	let result = request("/users",  data);	
 
 	//import {emailArr} from "./lib.js";
 
-	//if (result === '100'){
+	//if (result === "100"){
 		form.hidden = true;
 		window.helloWorld.innerHTML = hello(data.user, result);
 	//}
@@ -19,7 +19,7 @@ function onSubmit (form) {
 }
 
 function hello (name, numOfVisit){
-	return 'Привет, ' + name + '! Вы авторизировались у нас уже ' + numOfVisit +" " + plural(numOfVisit) + "!";
+	return "Привет, " + name + "! Вы авторизировались у нас уже " + numOfVisit +" " + plural(numOfVisit) + "!";
 }
 
 function plural (numStr){
@@ -30,6 +30,6 @@ function plural (numStr){
 	else return "раз";
 }
 
-if(typeof exports === 'object'){
+if(typeof exports === "object"){
 	exports.hello = hello;
 }
