@@ -1,4 +1,4 @@
-//export emailArr = [];
+export emailArr = [];
 
 function request(url, data) {
 	let xhr = new XMLHttpRequest();
