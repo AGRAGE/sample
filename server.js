@@ -26,7 +26,7 @@ app.post("/users", (req, res, body) => {
 
     numOfVisits = emailArr[userEmail] ;
 
-    res.send(numOfVisits);
+    res.send(numOfVisits.toString());
     
 });
 
