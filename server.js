@@ -14,17 +14,19 @@ app.post("/users", (req, res, body) => {
     console.log(req.body);
 
     // TODO: вернуть количество обращений
-
-    if (emailArr[req.body.email]) {
-	emailArr[req.body.email] += 1;
+    userEmail = req.body.email;
+ 
+    if (emailArr[userEmail]) {
+	emailArr[userEmail] += 1;
 
     }
     else {
-	emailArr[req.body.email] = 1;
+	emailArr[userEmail] = 1;
     }	
 
-    res.send(String(emailArr[req.body.email]));
-    //res.send(registrNum(emailArr[req.body.email]));
+    numOfVisits = emailArr[userEmail] ;
+
+    res.send(numOfVisits);
     
 });
 
@@ -32,14 +34,4 @@ app.listen(process.env.PORT || 3000, () => {
 	console.log(`App started on port ${process.env.PORT || 3000}`);
 });
 
-/*function registrNum(number) {
-    if (number) {
-	number += 1;
-
-    }
-    else {
-	number = 0;
-    }	
-    return String(number);
-}*/
 
