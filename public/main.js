@@ -6,11 +6,11 @@ function onSubmit (form) {
 		user: form.elements["user"].value,
 		email: form.elements["email"].value
 	};
-	let result = request("/users",  data);	
+	let result = request("/users",  data);
 
 	form.hidden = true;
 	window.helloWorld.innerHTML = hello(data.user, result);
-	
+
 	console.log(data, result);
 }
 
@@ -39,13 +39,32 @@ function pluralize (lang, formsOfCurWord, count) {
 				if (count == 1) return 	formsOfCurWord[0];
 				else return formsOfCurWord[1];
 				break;
-		default: 	
+		default:
 				return "No such language";
 	}
+}
+
+function filter(str) {
+  let rules = window.rules || [];
+
+	str = str + "";
+
+  rules = rules.map(rule => {
+    return {
+			regexp: new RegExp("\\b${rule}\\b","g"),
+			length: rule.lengths
+		};
+  });
+
+  rules.forEach(rule => {
+    str = str.replace(rule.regexp, (new Array(rule.length + 1)).join("*"))
+  });
+  return str;
 }
 
 if(typeof exports === "object"){
 	exports.hello = hello;
 	exports.plural = plural;
 	exports.pluralize = pluralize;
+	exports.filter = filter;
 }

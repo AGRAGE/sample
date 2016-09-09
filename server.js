@@ -15,23 +15,26 @@ app.post("/users", (req, res, body) => {
 
     // TODO: вернуть количество обращений
     userEmail = req.body.email;
- 
+
     if (emailArr[userEmail]) {
 	emailArr[userEmail] += 1;
 
     }
     else {
 	emailArr[userEmail] = 0;
-    }	
+    }
 
     numOfVisits = emailArr[userEmail] ;
 
     res.send(numOfVisits.toString());
-    
+
 });
+
 
 app.listen(process.env.PORT || 3000, () => {
 	console.log(`App started on port ${process.env.PORT || 3000}`);
 });
 
+if(typeof exports === "object"){
 
+}
