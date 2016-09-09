@@ -28,4 +28,5 @@ function plural (numOfVisits){
 
 if(typeof exports === "object"){
 	exports.hello = hello;
+	exports.plural = plural;
 }

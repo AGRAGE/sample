@@ -21,7 +21,7 @@ app.post("/users", (req, res, body) => {
 
     }
     else {
-	emailArr[userEmail] = 1;
+	emailArr[userEmail] = 0;
     }	
 
     numOfVisits = emailArr[userEmail] ;
