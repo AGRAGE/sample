@@ -44,7 +44,7 @@ function pluralize (lang, formsOfCurWord, count) {
 	}
 }
 
-function filter(str) {
+/*function filter(str) {
   let rules = window.rules || [];
 
 	str = str + "";
@@ -60,11 +60,11 @@ function filter(str) {
     str = str.replace(rule.regexp, (new Array(rule.length + 1)).join("*"))
   });
   return str;
-}
+}*/
 
 if(typeof exports === "object"){
 	exports.hello = hello;
 	exports.plural = plural;
 	exports.pluralize = pluralize;
-	exports.filter = filter;
+//	exports.filter = filter;
 }
