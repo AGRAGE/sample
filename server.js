@@ -3,7 +3,7 @@ let technologger = require("technologger");
 let parser = require("body-parser");
 let app = express();
 
-if (emailArr === undefined) var emailArr = {};
+var emailArr = {};
 
 app.use("/", express.static("public"));
 
@@ -21,7 +21,7 @@ app.post("/users", (req, res, body) => {
 
     }
     else {
-	emailArr[userEmail] = 0;
+	emailArr[userEmail] = 1;
     }
 
     numOfVisits = emailArr[userEmail] ;
