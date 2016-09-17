@@ -1,5 +1,14 @@
 "use strict"
 
+(function (){
+	'use strict';
+
+	//import
+	let Button = window.Button;
+	//let formEl = document.QuerySelector
+
+	let userData = {};
+})();
 
 function onSubmit (form) {
 	let data = {

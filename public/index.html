@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Frontend privet</title>
 
-	<link rel="stylesheet" href="/css/milligram.min.css"/>
+	<link rel="stylesheet" href="/css/milligram.min.css" />
 	<link rel="stylesheet" href="/css/main.css" />
+	<link rel="stylesheet" href="/components/button.css" />
 
-	
 	<script src="lib.js"></script>
 	<script src="main.js"></script>
+	<script src="module.js"></script>
+	<script src="/components/button.js"></script>
 </head>
+
 <body>
 	<h3 id="helloWorld">Привет, залогинься!</h3>
 	<form action="/users" method="post" onsubmit="onSubmit(this); return false;">
-		<input placeholder="Ваш email" name="email" value=""/>
-		<input placeholder="Ваше имя"  name="user" value=""/>
+		<input placeholder="Ваш email" name="email" value="" />
+		<input placeholder="Ваше имя" name="user" value="" />
 		<button name="name">
 		Привет!
 		</button>
 	</form>
 
 </body>
+
 </html>
