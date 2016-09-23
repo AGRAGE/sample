@@ -5,9 +5,27 @@ let app = express();
 
 var emailArr = {};
 
-app.use("/", express.static("public"));
+let technolibs = require('technolibs');
+
+app.use('/', express.static('public'));
+technoDoc.generate(require('./api'), 'public');
 
 app.use(parser.json());
+app.use('/libs', express.static('node_modules'));
+
+app.post('/api/messages', (req, res) => {
+	technolibs.publish(req.body).then(body => res.json(req.body));
+});
+
+app.get('/api/messages', function (req, res) {
+	res.send([
+		technoDoc.mock(require('./api/scheme/Message')),
+		technoDoc.mock(require('./api/scheme/Message')),
+		technoDoc.mock(require('./api/scheme/Message')),
+		technoDoc.mock(require('./api/scheme/Message'))
+	])
+});
+
 app.use(technologger);
 
 app.post("/users", (req, res, body) => {
